@@ -8,8 +8,9 @@ public class UserController {
 
     // 회원가입
     @GetMapping("/")
-    public String join() {
+    public String hello() {
         return "hello";
     }
 
 }
+
