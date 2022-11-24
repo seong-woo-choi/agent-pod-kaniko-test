@@ -1,5 +1,5 @@
 # jar 빌드
-FROM gradle as builder
+FROM gradle:7.5.1-jdk-alpine as builder
 WORKDIR /build
 
 COPY gradlew .
