@@ -1,5 +1,5 @@
 # jar 빌드
-FROM gradle:7.5.1-jdk11-alpine as builder
+FROM gradle as builder
 WORKDIR /build
 
 COPY gradlew .
@@ -15,6 +15,10 @@ RUN gradle build -x test --parallel
 # jar 파일 실행
 FROM openjdk:11.0-slim
 WORKDIR /app
+
+ARG JAVA_PROFILE
+ARG PROFILE
+ARG ELASTIC_APM_URL
 
 ENV JAVA_PROFILE=$JAVA_PROFILE
 ENV PROFILE=$PROFILE
