@@ -10,7 +10,7 @@ COPY src src
 
 RUN chmod +x ./gradlew
 #RUN ./gradle clean -x test -Dspring.profiles.active=devel --stacktrace
-RUN ./gradle clean -x test -Dspring.profiles.active=devel --stacktrace
+RUN ./gradle clean -x test --stacktrace
 RUN ./gradle build -x test --parallel
 
 # jar 파일 실행
